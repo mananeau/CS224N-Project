@@ -10,8 +10,13 @@ Guoqin Ma <sebsk@stanford.edu>
 import os
 import pickle
 import numpy as np
+import argparse
 
-os.chdir('/Users/sebastianma/Documents/CS221AI/Project/glove.twitter.27B')
+parser = argparse.ArgumentParser()
+parser.add_argument("--embedding_folder", type=str)
+args = parser.parse_args()
+
+os.chdir(args.embedding_folder)
 
 with open('glove.twitter.27B.200d.txt') as f:
     words = f.readlines()
