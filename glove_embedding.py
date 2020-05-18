@@ -14,6 +14,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--embedding_folder", type=str)
+parser.add_argument("--output_folder", type=str)
 args = parser.parse_args()
 
 os.chdir(args.embedding_folder)
@@ -30,7 +31,7 @@ for i, w in enumerate(words):
     embeddings.append([float(j) for j in w_list[1:]])
 
 embeddings = np.array(embeddings)
-os.chdir('/Users/sebastianma/Documents/CS224N/Project/')
+os.chdir(args.output_folder)
 pickle.dump(word2id, open('glove_word2id', 'wb'))
 np.save('glove_embeddings', embeddings)
 
