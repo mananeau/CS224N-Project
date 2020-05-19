@@ -189,7 +189,7 @@ def train(args):
             batch_size = len(sents)
 
             pre_softmax = model(sents)
-            print(type(target[0]))
+            print(type(targets[0]))
             loss = cn_loss(pre_softmax, torch.tensor(targets, dtype=torch.long, device=device))
 
             loss.backward()
