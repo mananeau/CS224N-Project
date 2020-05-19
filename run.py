@@ -121,9 +121,7 @@ def plot_confusion_matrix(y_true, y_pred, classes, normalize=False, title=None, 
 
 def train(args):
 
-    label_name = ['not related or not informative', 'other useful information', 'donations and volunteering',
-                  'affected individuals', 'sympathy and support', 'infrastructure and utilities damage',
-                  'caution and advice']
+    label_name = ['0','1']
 
     device = torch.device("cuda:0" if args['--cuda'] else "cpu")
 
