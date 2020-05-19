@@ -162,7 +162,7 @@ def train(args):
 
     model.train()
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
-    cn_loss = torch.nn.CrossEntropyLoss(weight=train_label_weight, reduction='mean')
+    cn_loss = torch.nn.CrossEntropyLoss(weight=train_label_weight.float(), reduction='mean')
     torch.save(cn_loss, 'loss_func')  # for later testing
 
     train_batch_size = int(args['--batch-size'])
