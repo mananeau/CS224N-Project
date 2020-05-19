@@ -190,7 +190,7 @@ def train(args):
 
             pre_softmax = model(sents)
 
-            loss = cn_loss(pre_softmax, torch.tensor(targets, dtype=torch.long, device=device))
+            loss = cn_loss(pre_softmax, torch.tensor(targets.float(), dtype=torch.long, device=device))
 
             loss.backward()
 
