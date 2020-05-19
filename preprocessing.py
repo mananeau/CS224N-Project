@@ -29,7 +29,7 @@ def cleaning(text_str):
     return text_str
 
 
-df = pd.read_csv(args.input_file_path, index_col=0, encoding='utf-8')
+df = pd.read_csv(args.input_file_path, index_col=0, encoding='utf-8', engine='python')
 df.columns = ['text', 'InformationType_label']
 df['ProcessedText'] = df['text'].apply(cleaning)
 
