@@ -32,5 +32,5 @@ def cleaning(text_str):
 df = pd.read_csv(args.input_file_path, index_col=0, encoding='utf-8', engine='python')
 df.columns = ['text', 'InformationType_label']
 df['ProcessedText'] = df['text'].apply(cleaning)
-
+print(os.path.join(args.output_folder,"preprocessed_" + os.path.split(args.input_file_path)[1]), flush=True)
 df.to_csv(os.path.join(args.output_folder,"preprocessed_" + os.path.split(args.input_file_path)[1]))
